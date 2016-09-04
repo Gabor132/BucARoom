@@ -24,7 +24,7 @@
                     <tr>
                         <td>ID</td>
                         <td>USERNAME</td>
-                        <td>PASSWORD</td>
+                        <td>EMAIL</td>
                     </tr>
                 </thead>
                 <tbody id="tableBody"></tbody>
@@ -35,7 +35,8 @@
             <fieldset>
                 <legend>Add User</legend>
                 Username: <input id="user" type="text" name="username"/>
-                Password: <input id="pass" type="password" name="password"/><br/>
+                Password: <input id="pass" type="password" name="password"/>
+                Email: <input id="email" type="text" name="email"/><br/>
                 <button type="button" onclick="addUser()">Submit</button>
             </fieldset>
             <fieldset>

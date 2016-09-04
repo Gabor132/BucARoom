@@ -9,7 +9,7 @@ function getUserById(){
     if(id){
         $.ajax({
             type:"GET",
-            url: id,
+            url: "users/"+id,
             success: function(user){
                 if(user){
                     alert("Found "+user.username);
@@ -25,10 +25,10 @@ function userToTableRow(user){
     var tr = $("<tr class=\"user\"></tr>");
     var tdId = $("<td></td>").append(user.id);
     var tdUsername = $("<td></td>").append(user.username);
-    var tdPassword = $("<td></td>").append(user.password);
+    var tdEmail = $("<td></td>").append(user.email);
     tr.append(tdId);
     tr.append(tdUsername);
-    tr.append(tdPassword);
+    tr.append(tdEmail);
     return tr;
 }
 
@@ -56,9 +56,11 @@ function getAllUsers(){
 function addUser(){
     var user = $("#user").val();
     var pass = $("#pass").val();
+    var email = $("#email").val();
     var sendInfo = {
         username: user,
-        password: pass
+        password: pass,
+        email: email
     };
     $.ajax({
         type: "POST",

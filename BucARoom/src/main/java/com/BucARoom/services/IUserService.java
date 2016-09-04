@@ -12,11 +12,12 @@ import java.util.List;
  *
  * @author Dragos
  */
-public interface UserService {
+public interface IUserService {
+    
+    public Users getUserById(long id);
     
     public List<Users> getAllUsers();
     
-    public Users getUserById(Long id);
+    public Users addUser(Users user);
     
-    public Users addUsers(Users user);
 }

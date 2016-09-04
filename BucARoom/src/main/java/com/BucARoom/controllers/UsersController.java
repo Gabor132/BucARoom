@@ -8,9 +8,11 @@ package com.BucARoom.controllers;
 import com.BucARoom.entities.Users;
 import com.BucARoom.services.UserServiceImpl;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -49,17 +51,13 @@ public class UsersController {
     }
     
     @RequestMapping(value="/addUser", method=POST)
-    public Users addUser(@ModelAttribute Users user){
-        user = userService.addUsers(user);
+    public Users addUser(@Valid Users user, BindingResult bindingResult){
+        if(!bindingResult.hasErrors()){
+            user = userService.addUser(user);
+        }else{
+            user = null;
+        }
         return user;
-    }
-    
-    public void setUserService(UserServiceImpl userService){
-        this.userService = userService;
-    }
-    
-    public UserServiceImpl getUserService(){
-        return this.userService;
     }
     
 }
