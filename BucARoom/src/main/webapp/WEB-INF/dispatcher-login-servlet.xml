@@ -12,15 +12,18 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"> 
     
-    <context:component-scan base-package="com.BucARoom.controller"/>
+    <context:component-scan base-package="com.BucARoom.controlle"/>
     <mvc:annotation-driven/>
     
     <bean id="viewResolver2"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          p:prefix="/WEB-INF/jsp/index/"
+          p:prefix="/WEB-INF/jsp/login/"
           p:suffix=".jsp" />
     <mvc:resources mapping="/resources/**" location="/resources/"
 	cache-period="31556926"/>
     
-    <bean id="indexController" class="com.BucARoom.controllers.IndexController"/>
+    <bean id="loginController" class="com.BucARoom.controllers.LoginController"/>
+    <bean name="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+    <bean name="jsonTemplate" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+ 
 </beans>

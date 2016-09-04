@@ -7,7 +7,6 @@ package com.BucARoom.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
@@ -15,13 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @RestController
 @RequestMapping
-public class IndexController {
-    
-    public IndexController(){}
-    
-    @RequestMapping(value="/")
-    public ModelAndView getIndex(){
-        return new ModelAndView("index");
-    }
+public class LoginController {
     
 }

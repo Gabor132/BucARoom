@@ -5,18 +5,18 @@
  */
 package com.BucARoom.services;
 
-import com.BucARoom.entities.Users;
-import java.util.List;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Dragos
  */
-public interface UserService {
+@Service
+public class LoginService {
     
-    public List<Users> getAllUsers();
+    boolean loggedIn = false;
     
-    public Users getUserById(Long id);
-    
-    public Users addUsers(Users user);
+    public Boolean isLoggedIn(){
+        return loggedIn;
+    }
 }
