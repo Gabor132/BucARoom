@@ -1,0 +1,53 @@
+/* 
+    Created on : Sep 10, 2016, 2:11:44 AM
+    Author     : Dragos
+*/
+
+html{
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: lightgray;
+}
+
+body{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+main{
+    background-color: darkgreen;
+    color:white;
+    align-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding-bottom: 1%;
+    margin-top: 15%;
+    padding-top: 1%;
+}
+
+#pageTitle{
+    margin-top:0px;
+}
+
+input{
+    margin-bottom: 10px;
+}
+
+#registerDiv{
+    position: relative;
+    display: none;
+}
+
+#username{
+    
+}
+
+#password{
+    
+}
+
+#loginButton{
+    
+}

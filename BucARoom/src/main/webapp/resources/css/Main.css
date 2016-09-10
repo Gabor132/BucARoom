@@ -1,0 +1,89 @@
+/* 
+    Created on : Sep 3, 2016, 3:41:02 PM
+    Author     : Dragos
+*/
+
+html{
+    background-color: white;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+body{
+    margin:0px;
+    color:white;
+    height:100%;
+}
+
+main{
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: darkgreen;
+    height: 100%;
+    padding-bottom: 20%;
+}
+
+table, td{
+    border: 1px solid darkseagreen;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+tbody{
+    background-color: darkseagreen;
+}
+
+.tableUsers{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#appName{
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color:white;
+    background-color: rgb(181,220,114);
+    margin-top: 0px;
+    text-align: center;
+}
+
+#pageTitle{
+    text-align: center;
+    margin-top: 0px;
+    color: darkseagreen;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+nav{
+    background-color: darkgreen;
+}
+
+ul{
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+li, li>a{
+    text-decoration: none;
+    display: inline;
+    align-content: center;
+    color:white;
+}
+
+li>a{
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+li:hover{
+    background-color: darkcyan;
+}

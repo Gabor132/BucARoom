@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.BucARoom.services;
+package com.BucARoom.user.service;
 
-import com.BucARoom.daos.UserDao;
-import com.BucARoom.entities.Users;
+import com.BucARoom.user.dao.UserDao;
+import com.BucARoom.user.entitie.Users;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

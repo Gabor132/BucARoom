@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.BucARoom.validators;
+package com.BucARoom.user.validator;
 
-import com.BucARoom.entities.Users;
+import com.BucARoom.user.entitie.Users;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;

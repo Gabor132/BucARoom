@@ -1,6 +1,6 @@
 <%-- 
-    Document   : login
-    Created on : Sep 4, 2016, 1:07:06 AM
+    Document   : register
+    Created on : Sep 10, 2016, 4:17:52 AM
     Author     : Dragos
 --%>
 
@@ -20,15 +20,18 @@
     </head>
     <body>
         <main>
-            <div id="loginDiv">
-                <h2 id="pageTitle">Login</h2>
-                <form id="loginForm" ng-app="loginApp" ng-controller="loginController" ng-submit="submit()">
-                    <input id="username" ng-model="username" type="text" placeholder="Username"><br/>
-                    <input id="password" ng-model="password" type="password" placeholder="Password"><br/>
-                    <button id="loginButton">Login</button>
+            <div id="registerDiv">
+                <form id="registerForm">
+                    <input id="firstName" type="text" placeholder="First Name">
+                    <input id="lastName" type="text" placeholder="Last Name"><br/>
+                    <input id="usernameR" type="text" placeholder="Username">
+                    <input id="passwordR" type="password" placeholder="Password"><br/>
+                    <input id="passwordRetypeR" type="password" placeholder="Retype Password">
+                    <input id="email" type="email" placeholder="something@something.something"></br>
+                    <button id="registerButton">Register</button>
                 </form>
             </div>
-            <a href="register"><p>Register</p></a>
+            <a href="login"><p>Login</p></a>
         </main>
     </body>
 </html>

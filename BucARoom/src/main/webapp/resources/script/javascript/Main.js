@@ -3,7 +3,7 @@ $(document).ready(function(){
     var menu = $("<nav id=\"menu\"></nav>");
     var ul = $("<ul></ul>");
     var home = $("<li><a href=\"/BucARoom\">HOME</a></li>");
-    var users = $("<li><a href=\"users\">USERS</a></li>");
+    var users = $("<li><a href=\"user\">USERS</a></li>");
     ul.append(home).append(users);
     menu.append(ul);
     

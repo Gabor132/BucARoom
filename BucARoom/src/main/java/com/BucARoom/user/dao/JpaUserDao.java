@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.BucARoom.daos;
+package com.BucARoom.user.dao;
 
-import com.BucARoom.entities.Users;
+import com.BucARoom.user.entitie.Users;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

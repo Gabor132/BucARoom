@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.BucARoom.entities;
+package com.BucARoom.user.entitie;
 
 import java.io.Serializable;
 import javax.persistence.Column;

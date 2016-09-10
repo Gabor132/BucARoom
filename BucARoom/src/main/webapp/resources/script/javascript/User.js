@@ -1,6 +1,7 @@
 
+
 $(document).ready(function(){
-    getAllUsers();
+    //getAllUsers();
 });
 
 function getUserById(){
@@ -9,7 +10,7 @@ function getUserById(){
     if(id){
         $.ajax({
             type:"GET",
-            url: "users/"+id,
+            url: "user/"+id,
             success: function(user){
                 if(user){
                     alert("Found "+user.username);
@@ -20,7 +21,7 @@ function getUserById(){
         });
     }
 }
-
+/*
 function userToTableRow(user){
     var tr = $("<tr class=\"user\"></tr>");
     var tdId = $("<td></td>").append(user.id);
@@ -30,8 +31,8 @@ function userToTableRow(user){
     tr.append(tdUsername);
     tr.append(tdEmail);
     return tr;
-}
-
+}*/
+/*
 function getAllUsers(){
     
     var table = $("#tableBody");
@@ -51,7 +52,7 @@ function getAllUsers(){
         }
     });
     
-}
+}*/
 
 function addUser(){
     var user = $("#user").val();
@@ -64,7 +65,7 @@ function addUser(){
     };
     $.ajax({
         type: "POST",
-        url: "users/addUser",
+        url: "user/addUser",
         dataType: "json",
         success: function (user) {
             location.reload(true);

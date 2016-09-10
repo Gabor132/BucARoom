@@ -6,12 +6,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="resources/css/main.css" type="text/css" rel="stylesheet">
-        <script src="resources/script/jquery-3.1.0.min.js" type="text/javascript"></script>
-        <script src="resources/script/main.js" type="text/javascript"></script>
+        <link href="resources/css/Main.css" type="text/css" rel="stylesheet">
+        <script src="resources/script/jquery/jquery-3.1.0.min.js" type="text/javascript"></script>
+        <script src="resources/script/javascript/Main.js" type="text/javascript"></script>
         <title>BucARoom</title>
     </head>
     <body>
         <header></header>
+        <main>
+            <h2 id="pageTitle">Home</h2>
+        </main>
     </body>
 </html>

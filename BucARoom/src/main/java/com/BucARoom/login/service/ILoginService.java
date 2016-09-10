@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.BucARoom.daos;
+package com.BucARoom.login.service;
 
 /**
  *
  * @author Dragos
  */
-public interface RoomDao {
+public interface ILoginService {
     
 }

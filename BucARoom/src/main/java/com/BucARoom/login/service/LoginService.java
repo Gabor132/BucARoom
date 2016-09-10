@@ -3,17 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.BucARoom.controllers;
+package com.BucARoom.login.service;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Dragos
  */
-@RestController
-@RequestMapping
-public class LoginController {
+@Service
+public class LoginService {
     
+    boolean loggedIn = false;
+    
+    public Boolean isLoggedIn(){
+        return loggedIn;
+    }
 }

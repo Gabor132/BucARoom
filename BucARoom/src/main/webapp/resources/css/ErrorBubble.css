@@ -1,0 +1,17 @@
+
+/* 
+    Created on : Sep 10, 2016, 3:30:43 AM
+    Author     : Dragos
+*/
+.bubble{
+    position:fixed;
+    right: 100px;
+    top: 100px;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+    background-color: darkseagreen;
+    padding:5px;
+    border:2px solid white;
+}

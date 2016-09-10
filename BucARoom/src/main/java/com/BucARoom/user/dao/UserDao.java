@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.BucARoom.services;
+package com.BucARoom.user.dao;
 
-import com.BucARoom.entities.Users;
+import com.BucARoom.user.entitie.Users;
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author Dragos
  */
-public interface IUserService {
+public interface UserDao {
     
-    public Users getUserById(long id);
-    
+    @Transactional
     public List<Users> getAllUsers();
-    
+    @Transactional
+    public Users getUserById(Long id);
+    @Transactional
     public Users addUser(Users user);
-    
 }

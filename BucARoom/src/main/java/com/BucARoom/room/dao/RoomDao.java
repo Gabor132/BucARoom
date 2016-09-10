@@ -3,20 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.BucARoom.services;
-
-import org.springframework.stereotype.Service;
+package com.BucARoom.room.dao;
 
 /**
  *
  * @author Dragos
  */
-@Service
-public class LoginService {
+public interface RoomDao {
     
-    boolean loggedIn = false;
-    
-    public Boolean isLoggedIn(){
-        return loggedIn;
-    }
 }

@@ -13,39 +13,19 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"> 
     
-    <context:component-scan base-package="com.BucARoom"/>
-    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <context:component-scan base-package="com.BucARoom.user"/>
     <mvc:annotation-driven/>
     <tx:annotation-driven/>
     
     <bean id="viewResolver2"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          p:prefix="/WEB-INF/jsp/users/"
+          p:prefix="/WEB-INF/jsp/user/"
           p:suffix=".jsp" />
     <mvc:resources mapping="/resources/**" location="/resources/"
 	cache-period="31556926"/>
     
-    <bean id="dataSource"
-    class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-    p:driverClassName="${jdbc.driverClassName}"
-    p:url="${jdbc.url}"
-    p:username="${jdbc.username}"
-    p:password="${jdbc.password}" />
-    
-    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
-        <property name="persistenceUnitName" value="BucARoomPU" /> 
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"/>
-    </bean>
-    
-    
-    
-    <bean id="usersController" class="com.BucARoom.controllers.UsersController"/>
-    <bean id="userService" class="com.BucARoom.services.UserServiceImpl"/>
+    <bean id="userController" class="com.BucARoom.user.controller.UserController"/>
+    <bean id="userService" class="com.BucARoom.user.service.UserServiceImpl"/>
     <bean name="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
     <bean name="jsonTemplate" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
  

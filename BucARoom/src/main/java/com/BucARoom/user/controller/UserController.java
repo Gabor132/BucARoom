@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.BucARoom.controllers;
+package com.BucARoom.user.controller;
 
-import com.BucARoom.entities.Users;
-import com.BucARoom.services.UserServiceImpl;
+import com.BucARoom.user.entitie.Users;
+import com.BucARoom.user.service.UserServiceImpl;
 import java.util.List;
 import javax.validation.Valid;
-import javax.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,17 +25,16 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @RestController
 @RequestMapping
-public class UsersController {
+public class UserController {
     
     @Autowired
     public UserServiceImpl userService;
     
-    public UsersController(){}
+    public UserController(){}
     
-    @RequestMapping(value="/users")
-    public ModelAndView users(){
-        ModelAndView mv = new ModelAndView("users");
-        return mv;
+    @RequestMapping(value="/user")
+    public ModelAndView userView(){
+        return new ModelAndView("user");
     }
     
     @RequestMapping(value="/all", method=GET)
