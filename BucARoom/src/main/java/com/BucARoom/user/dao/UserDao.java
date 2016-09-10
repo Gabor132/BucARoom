@@ -7,12 +7,14 @@ package com.BucARoom.user.dao;
 
 import com.BucARoom.user.entitie.Users;
 import java.util.List;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author Dragos
  */
+@Component
 public interface UserDao {
     
     @Transactional
@@ -21,4 +23,6 @@ public interface UserDao {
     public Users getUserById(Long id);
     @Transactional
     public Users addUser(Users user);
+    @Transactional
+    public Boolean userExists(Users user);
 }

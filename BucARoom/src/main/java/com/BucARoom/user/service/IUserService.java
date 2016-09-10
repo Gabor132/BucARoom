@@ -20,4 +20,6 @@ public interface IUserService {
     
     public Users addUser(Users user);
     
+    public Boolean userExists(Users user);
+    
 }

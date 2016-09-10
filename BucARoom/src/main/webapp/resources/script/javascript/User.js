@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-    //getAllUsers();
+    getAllUsers();
 });
 
 function getUserById(){
@@ -21,7 +21,7 @@ function getUserById(){
         });
     }
 }
-/*
+
 function userToTableRow(user){
     var tr = $("<tr class=\"user\"></tr>");
     var tdId = $("<td></td>").append(user.id);
@@ -31,15 +31,15 @@ function userToTableRow(user){
     tr.append(tdUsername);
     tr.append(tdEmail);
     return tr;
-}*/
-/*
+}
+
 function getAllUsers(){
     
     var table = $("#tableBody");
     $(".user").remove();
     $.ajax({
         type:"GET",
-        url: "users/all",
+        url: "user/all",
         success: function(listUsers){
             if(listUsers){
                 for(var i = 0; i< listUsers.length;i++){
@@ -52,7 +52,7 @@ function getAllUsers(){
         }
     });
     
-}*/
+}
 
 function addUser(){
     var user = $("#user").val();

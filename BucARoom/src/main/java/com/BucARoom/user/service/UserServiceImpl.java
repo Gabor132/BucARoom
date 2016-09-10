@@ -10,7 +10,6 @@ import com.BucARoom.user.entitie.Users;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
 
 /**
  *
@@ -35,5 +34,10 @@ public class UserServiceImpl implements IUserService {
     @Override
     public Users addUser(Users user){
         return userDao.addUser(user);
+    }
+
+    @Override
+    public Boolean userExists(Users user) {
+        return userDao.userExists(user);
     }
 }

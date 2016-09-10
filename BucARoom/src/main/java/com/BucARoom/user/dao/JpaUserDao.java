@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.RollbackException;
 import javax.persistence.TypedQuery;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Dragos
  */
 @Repository
+@Component
 public class JpaUserDao implements UserDao{
     
     @PersistenceContext
@@ -61,5 +63,13 @@ public class JpaUserDao implements UserDao{
             newUser = null;
         }
         return newUser;
+    }
+
+    @Override
+    public Boolean userExists(Users user) {
+        TypedQuery<Users> query = entityManager.createNamedQuery("Users.findExistance", Users.class);
+        query.setParameter("username", user.getUsername());
+        query.setParameter("password", user.getPassword());
+        return !query.getResultList().isEmpty();
     }
 }

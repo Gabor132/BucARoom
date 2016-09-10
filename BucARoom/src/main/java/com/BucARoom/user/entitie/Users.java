@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.BucARoom.user.entitie;
 
 import java.io.Serializable;
@@ -10,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.validation.constraints.NotNull;
 
@@ -18,7 +15,10 @@ import javax.validation.constraints.NotNull;
  * @author Dragos
  */
 @Entity
-@NamedQuery(name="Users.findAll", query = "SELECT u FROM Users u")
+@NamedQueries({
+    @NamedQuery(name="Users.findAll", query = "SELECT u FROM Users u"),
+    @NamedQuery(name="Users.findExistance", query="SELECT u FROM Users u where u.username =:username AND u.password = :password")
+})
 public class Users implements Serializable {
 
     @Id
@@ -29,6 +29,14 @@ public class Users implements Serializable {
     @Column(name="username", unique = true)
     @NotNull
     private String username;
+    
+    @Column(name="firstName")
+    @NotNull
+    private String firstName;
+    
+    @Column(name="lastName")
+    @NotNull
+    private String lastName;
     
     @Column(name = "password")
     @NotNull
@@ -54,6 +62,22 @@ public class Users implements Serializable {
         this.username = username;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    
     public String getPassword() {
         return password;
     }

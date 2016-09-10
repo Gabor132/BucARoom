@@ -6,6 +6,10 @@
 package com.BucARoom.login.controller;
 
 import com.BucARoom.user.entitie.Users;
+import com.BucARoom.user.service.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +22,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping
 public class LoginController {
+    
+    @Autowired
+    UserServiceImpl userService;
     
     public LoginController(){}
     
@@ -32,7 +39,10 @@ public class LoginController {
     }
     
     @RequestMapping(value="/checkUser", method=POST)
-    public Boolean login(Users user){
-        return user.getUsername() != null && user.getPassword() != null;
+    public boolean login(Users user){
+        if(user.getUsername() != null && user.getPassword() != null){
+            return userService.userExists(user);
+        }
+        return false;
     }
 }

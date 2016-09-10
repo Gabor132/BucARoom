@@ -24,8 +24,9 @@
     <mvc:resources mapping="/resources/**" location="/resources/"
 	cache-period="31556926"/>
     
-    <bean id="userController" class="com.BucARoom.user.controller.UserController"/>
+    <bean id="userDao" class="com.BucARoom.user.dao.JpaUserDao"/>
     <bean id="userService" class="com.BucARoom.user.service.UserServiceImpl"/>
+    <bean id="userController" class="com.BucARoom.user.controller.UserController"/>
     <bean name="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
     <bean name="jsonTemplate" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
  

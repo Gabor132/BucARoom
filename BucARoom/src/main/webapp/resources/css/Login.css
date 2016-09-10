@@ -35,19 +35,14 @@ input{
     margin-bottom: 10px;
 }
 
-#registerDiv{
-    position: relative;
-    display: none;
+main p{
+    text-decoration: none;
+    color:white;
+    display:inline-block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#username{
-    
-}
-
-#password{
-    
-}
-
-#loginButton{
-    
+main p:hover{
+    color:grey;
 }

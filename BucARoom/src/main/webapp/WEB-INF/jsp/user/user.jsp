@@ -12,8 +12,6 @@
         <title>BucARoom - Users</title>
         <link rel="stylesheet" type="text/css" href="resources/css/Main.css">
         <script src="resources/script/jquery/jquery-3.1.0.min.js" type="text/javascript"></script>
-        <script src="resources/script/angularjs/angular.js"></script>
-        <script src="resources/script/angularjs/apps/UserApp.js"></script>
         <script src="resources/script/javascript/Main.js" type="text/javascript"></script>
         <script src="resources/script/javascript/User.js" type="text/javascript"></script>
     </head>
@@ -35,8 +33,7 @@
                     <button type="button" onclick="getUserById()">Find</button>
                 </fieldset>
             </form>
-            <div class="tableUsers" ng-app="userApp" 
-                 ng-init="listUsers[{id:'1', username:'Admin', email:'Admin'}]" ng-controller="userController">
+            <div class="tableUsers">
                 <table>
                     <thead>
                         <tr>
@@ -45,13 +42,7 @@
                             <td>EMAIL</td>
                         </tr>
                     </thead>
-                    <tbody id="tableBody">
-                        <tr ng-repeat="user in listUsers">
-                            <td>{{user.id}}</td>
-                            <td>{{user.username}}</td>
-                            <td>{{user.email}}</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="tableBody"></tbody>
                 </table>
             </div>
         </main>
