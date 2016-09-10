@@ -58,10 +58,15 @@ function addUser(){
     var user = $("#user").val();
     var pass = $("#pass").val();
     var email = $("#email").val();
+    var first = $("#first").val();
+    var last = $("#last").val();
+    if(user==='' || pass==='' || email==='' || first==='' || last==='') return;
     var sendInfo = {
         username: user,
         password: pass,
-        email: email
+        email: email,
+        firstName: first,
+        lastName: last
     };
     $.ajax({
         type: "POST",

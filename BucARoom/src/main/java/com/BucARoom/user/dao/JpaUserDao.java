@@ -57,6 +57,8 @@ public class JpaUserDao implements UserDao{
         newUser.setPassword(user.getPassword());
         newUser.setUsername(user.getUsername());
         newUser.setEmail(user.getEmail());
+        newUser.setFirstName(user.getFirstName());
+        newUser.setLastName(user.getLastName());
         try{
             entityManager.persist(newUser);
         }catch(RollbackException ex){

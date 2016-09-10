@@ -19,13 +19,15 @@
         <header></header>
         <main>
             <h2 id="pageTitle">Users</h2>
-            <form id="formUserAdd">
+            <form id="formUserAdd" method = 'POST'>
                 <fieldset>
                     <legend>Add User</legend>
-                    Username: <input id="user" type="text" name="username"/>
-                    Password: <input id="pass" type="password" name="password"/>
-                    Email: <input id="email" type="text" name="email"/><br/>
-                    <button type="button" onclick="addUser()">Submit</button>
+                    Username: <input id="user" type="text" name="username" required/>
+                    Password: <input id="pass" type="password" name="password" required/>
+                    First name: <input id="first" type="text" name="firstname" required/>
+                    Last name: <input id="last" type="text" name="lastname" required/>
+                    Email: <input id="email" type="text" name="email" required/><br/>
+                    <input type="submit" onclick="addUser()">
                 </fieldset>
                 <fieldset>
                     <legend>Find user by Id</legend>
