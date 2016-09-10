@@ -1,0 +1,7 @@
+
+-- Update sql database --
+
+Start mysql server from command line with -- mysqld
+Start mysql editor from command line with -- mysql -u root -p and enter password root
+
+Copy sql scripts from files and run them in order.
