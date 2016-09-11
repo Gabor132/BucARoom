@@ -1,0 +1,30 @@
+
+/* 
+    Created on : Sep 11, 2016, 2:47:18 PM
+    Author     : Dragos
+*/
+
+input{
+    margin-top: 2%;
+    margin-right: 5px;
+    display:inline-block;
+}
+
+.formUser{
+    align-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formUser fieldset{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    
+}
+
+.tableUsers thead td{
+    padding-left: 5px;
+    padding-right: 5px;
+}
