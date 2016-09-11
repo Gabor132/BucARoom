@@ -1,5 +1,7 @@
 
 
+/* global errorHandler */
+
 $(document).ready(function(){
     getAllUsers();
 });
@@ -7,16 +9,23 @@ $(document).ready(function(){
 function getUserById(){
     var id = $("#id").val();
     $("#id").val("");
+    if(id === '') return;
     if(id){
         $.ajax({
             type:"GET",
             url: "user/"+id,
             success: function(user){
-                if(user){
-                    alert("Found "+user.username);
+                if(user !== ""){
+                    var table = $("#tableBody");
+                    $(".user").remove();
+                    var userRow = userToTableRow(user);
+                    table.append(userRow);
                 }else{
-                    alert("No user with that id!");
+                    errorHandler.alertError("No user with that id!");
                 }
+            },
+            complete: function(x){
+                console.log(x.status);
             }
         });
     }
@@ -26,15 +35,18 @@ function userToTableRow(user){
     var tr = $("<tr class=\"user\"></tr>");
     var tdId = $("<td></td>").append(user.id);
     var tdUsername = $("<td></td>").append(user.username);
+    var tdFirstName = $("<td></td>").append(user.firstName);
+    var tdLastName = $("<td></td>").append(user.lastName);
     var tdEmail = $("<td></td>").append(user.email);
     tr.append(tdId);
     tr.append(tdUsername);
+    tr.append(tdFirstName);
+    tr.append(tdLastName);
     tr.append(tdEmail);
     return tr;
 }
 
 function getAllUsers(){
-    
     var table = $("#tableBody");
     $(".user").remove();
     $.ajax({
@@ -54,12 +66,25 @@ function getAllUsers(){
     
 }
 
+$(function(){
+    $('.formUser').on('submit', function(e){
+        addUser();
+        e.preventDefault();
+        getAllUsers();
+    });
+});
+
 function addUser(){
     var user = $("#user").val();
+    $("#user").val('');
     var pass = $("#pass").val();
+    $("#pass").val('');
     var email = $("#email").val();
+    $("#email").val('');
     var first = $("#first").val();
+    $("#first").val('');
     var last = $("#last").val();
+    $("#last").val('');
     if(user==='' || pass==='' || email==='' || first==='' || last==='') return;
     var sendInfo = {
         username: user,
@@ -73,7 +98,8 @@ function addUser(){
         url: "user/addUser",
         dataType: "json",
         success: function (user) {
-            location.reload(true);
+            //location.reload(true);
+            errorHandler.alertError('Added user '+user.username);
         },
         complete: function(x){
             console.log(x.status);
@@ -83,7 +109,7 @@ function addUser(){
                 alert("CLIENT FAILED!");
             }
         },
-        data: sendInfo,
-        traditional: true
+        data: sendInfo
     });
+    
 }

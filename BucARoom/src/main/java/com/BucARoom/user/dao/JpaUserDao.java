@@ -45,26 +45,23 @@ public class JpaUserDao implements UserDao{
     @Override
     public Users getUserById(Long id){
         Users user = entityManager.find(Users.class, id);
-        user.setPassword("");
+        if(user!= null){
+            user.setPassword("");
+        }else{
+            user = null;
+        }
         return user;
     }
     
     @Transactional
     @Override
     public Users addUser(Users user){
-        
-        Users newUser = new Users();
-        newUser.setPassword(user.getPassword());
-        newUser.setUsername(user.getUsername());
-        newUser.setEmail(user.getEmail());
-        newUser.setFirstName(user.getFirstName());
-        newUser.setLastName(user.getLastName());
         try{
-            entityManager.persist(newUser);
+            entityManager.persist(user);
         }catch(RollbackException ex){
-            newUser = null;
+            user = null;
         }
-        return newUser;
+        return user;
     }
 
     @Override
