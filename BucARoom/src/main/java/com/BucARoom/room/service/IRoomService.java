@@ -3,25 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.BucARoom.room.dao;
+package com.BucARoom.room.service;
 
 import com.BucARoom.room.entitie.Rooms;
 import java.util.List;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
- * @author Dragos
+ * @author DragosGabor
  */
-public interface RoomDao {
+public interface IRoomService {
     
-    @Transactional
+    public Rooms getRoomById(long id);
+    
     public List<Rooms> getAllRooms();
-    @Transactional
-    public Rooms getRoomById(Long id);
-    @Transactional
-    public Rooms addRoom(Rooms room);
-    @Transactional
-    public Rooms getRoomByRoomNumber(int roomNumber);
     
+    public Rooms addRoom(Rooms room);
+    
+    public Rooms getRoomByRoomNumber(int roomNumber);
 }

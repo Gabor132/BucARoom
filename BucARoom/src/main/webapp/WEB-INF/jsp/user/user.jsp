@@ -25,8 +25,8 @@
             <form class="formUser" method="POST">
                 <fieldset>
                     <legend>Add User</legend>
-                    Username: <input id="user" type="text" name="username" required/>
-                    Password: <input id="pass" type="password" name="password" required/></br>
+                    Username: <input id="roomNumber" type="text" name="username" required/>
+                    Password: <input id="roomFloor" type="password" name="password" required/></br>
                     First name: <input id="first" type="text" name="firstname" required/>
                     Lastname: <input id="last" type="text" name="lastname" required/><br/>
                     Email: <input id="email" type="email" name="email" required/>

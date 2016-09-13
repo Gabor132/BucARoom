@@ -1,0 +1,1 @@
+create table reservations (id bigint(20) auto_increment primary key, user_id bigint(20), room_id bigint(20), start_reservation datetime not null, end_reservation datetime not null, foreign key(user_id) references users(id), foreign key(room_id) references rooms(id));

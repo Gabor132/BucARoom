@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -15,6 +16,7 @@ import javax.validation.constraints.NotNull;
  * @author Dragos
  */
 @Entity
+@Table(name="USERS")
 @NamedQueries({
     @NamedQuery(name="Users.findAll", query = "SELECT u FROM Users u"),
     @NamedQuery(name="Users.findExistance", query="SELECT u FROM Users u where u.username =:username AND u.password = :password")
